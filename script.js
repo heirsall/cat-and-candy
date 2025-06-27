@@ -114,14 +114,14 @@ function endGame(win) {
 
   if (win) {
     sfxWin.play();
-    infoText.innerHTML = "🎉 You Win!<br><em>“Great job, champion! 🐾”</em>";
+    infoText.innerHTML =
+      "yay! kamu menang 🐾 terima kasih sudah memberikan kucing-nya makanan, sama kayak kamu, sudah berusaha buat belajar juga 💪🏻 terimakaashi, dan semangat buat besok ujiannya!!! Fighting 🔥";
   } else {
     sfxBomb.play();
-    infoText.innerHTML =
-      "💥 You hit a bomb!<br><em>Try again, you got this!</em>";
+    infoText.innerHTML = "yahhh kucingnya minum racun 🤧 ayo coba lagi!";
   }
 
-  infoButton.textContent = "Play Again";
+  infoButton.textContent = "Main Lagi!";
   infoBox.classList.add("active");
 }
 
@@ -132,3 +132,53 @@ function restartGame() {
   infoButton.textContent = "Start";
   infoBox.classList.add("active");
 }
+
+// Touch and mouse drag controls
+let isDragging = false;
+let dragStartX = 0;
+let catStartPos = 0;
+
+// Touch events for mobile
+cat.addEventListener("touchstart", (e) => {
+  if (!gameStarted || isGameOver) return;
+  isDragging = true;
+  dragStartX = e.touches[0].clientX;
+  catStartPos = catPosition;
+});
+
+document.addEventListener("touchmove", (e) => {
+  if (!isDragging) return;
+  const deltaX = e.touches[0].clientX - dragStartX;
+  // Assume gameFrame width is 100% of screen, so 1% = gameFrame.offsetWidth / 100
+  const percentDelta = (deltaX / gameFrame.offsetWidth) * 100;
+  let newPos = catStartPos + percentDelta;
+  newPos = Math.max(0, Math.min(85, newPos));
+  catPosition = newPos;
+  cat.style.left = catPosition + "%";
+});
+
+document.addEventListener("touchend", () => {
+  isDragging = false;
+});
+
+// Mouse drag for desktop
+cat.addEventListener("mousedown", (e) => {
+  if (!gameStarted || isGameOver) return;
+  isDragging = true;
+  dragStartX = e.clientX;
+  catStartPos = catPosition;
+});
+
+document.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+  const deltaX = e.clientX - dragStartX;
+  const percentDelta = (deltaX / gameFrame.offsetWidth) * 100;
+  let newPos = catStartPos + percentDelta;
+  newPos = Math.max(0, Math.min(85, newPos));
+  catPosition = newPos;
+  cat.style.left = catPosition + "%";
+});
+
+document.addEventListener("mouseup", () => {
+  isDragging = false;
+});

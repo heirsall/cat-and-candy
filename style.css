@@ -10,7 +10,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
 }
 
 .game-container {
@@ -85,4 +86,11 @@ body {
   font-weight: bold;
   cursor: pointer;
   border-radius: 8px;
+}
+
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+  touch-action: none; /* optional: blok gestur sentuh default */
 }
