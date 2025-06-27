@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catch the Food!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <div id="game-frame">
+        <div id="cat"></div>
+        <div id="info-box" class="active">
+          <p id="info-text">Tap untuk mulai game</p>
+          <button id="info-button">Start</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sound -->
+    <audio
+      id="bgm"
+      src="https://cdn.pixabay.com/audio/2023/05/16/audio_b82ceffccd.mp3"
+      loop
+    ></audio>
+    <audio
+      id="sfx-food"
+      src="https://cdn.pixabay.com/audio/2022/03/15/audio_438312f8d5.mp3"
+    ></audio>
+    <audio
+      id="sfx-bomb"
+      src="https://cdn.pixabay.com/audio/2022/03/15/audio_d0c7d3f6ec.mp3"
+    ></audio>
+    <audio
+      id="sfx-win"
+      src="https://cdn.pixabay.com/audio/2021/08/09/audio_603c1ef282.mp3"
+    ></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
