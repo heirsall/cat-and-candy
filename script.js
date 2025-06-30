@@ -38,6 +38,10 @@ infoButton.addEventListener("click", () => {
   }
 });
 
+function updateScore() {
+  document.getElementById("score").textContent = score;
+}
+
 function spawnItem() {
   const item = document.createElement("div");
   const type = Math.random() < 0.8 ? "food" : "bomb";
@@ -73,6 +77,7 @@ function spawnItem() {
       if (type === "food") {
         sfxFood.play();
         score++;
+        updateScore();
         if (score >= 13) {
           endGame(true);
         } else {
@@ -92,6 +97,7 @@ function spawnItem() {
 
 function startGame() {
   score = 0;
+  updateScore();
   fallingSpeed = 2;
   isGameOver = false;
   catPosition = 42.5;
@@ -115,10 +121,11 @@ function endGame(win) {
   if (win) {
     sfxWin.play();
     infoText.innerHTML =
-      "yay! kamu menang 🐾 terima kasih sudah memberikan kucing-nya makanan, sama kayak kamu, sudah berusaha buat belajar juga 💪🏻 terimakaashi, dan semangat buat besok ujiannya!!! Fighting 🔥";
+      "Yay! Kamu berhasil 🐾 Terima kasih sudah memberikan kucingnya permen 😼 Teruntuk kamu Alila, semoga game ini bikin kamu senang ya! Semoga tidak bosan, seperti biasa, terima kasih sudah belajar, sudah berusaha, lagi-lagi, <i>so proud of you.</i> Apapun hasilnya, aku bangga dengan apa yang sudah kamu pilih dan usahakan, selebihnya <i>take your time</i>. Terakhir, semoga pesan ini juga sampai ya rasa <i>excited-nya</i> aku 😎 Semoga hari kamu menyenangkan!";
   } else {
     sfxBomb.play();
-    infoText.innerHTML = "yahhh kucingnya minum racun 🤧 ayo coba lagi!";
+    infoText.innerHTML =
+      "Yah kasian kucingnya <b>minum racun</b> 🥲 Ayo! Jangan menyerah kasih makan kucingnya 😺";
   }
 
   infoButton.textContent = "Main Lagi!";
@@ -128,7 +135,9 @@ function endGame(win) {
 function restartGame() {
   document.querySelectorAll(".food, .bomb").forEach((el) => el.remove());
   gameStarted = false;
-  infoText.innerHTML = "Tap untuk mulai game";
+  score = 0;
+  updateScore();
+  infoText.innerHTML = "<b>Welcome to Cat & Candy!</b> Main lagi ya? 😺";
   infoButton.textContent = "Start";
   infoBox.classList.add("active");
 }

@@ -11,33 +11,24 @@
   </head>
   <body>
     <div class="game-container">
+      <div id="score-bar">Score: <span id="score">0</span></div>
       <div id="game-frame">
         <div id="cat"></div>
         <div id="info-box" class="active">
-          <p id="info-text">Tap untuk mulai game!</p>
+          <p id="info-text">
+            <b>Welcome to Cat & Candy!</b> Ada pesan rahasia spesial untuk kamu
+            😺 Tap "Start" untuk bermain!
+          </p>
           <button id="info-button">Start</button>
         </div>
       </div>
     </div>
 
     <!-- Sound -->
-    <audio
-      id="bgm"
-      src="https://cdn.pixabay.com/audio/2023/05/16/audio_b82ceffccd.mp3"
-      loop
-    ></audio>
-    <audio
-      id="sfx-food"
-      src="https://cdn.pixabay.com/audio/2022/03/15/audio_438312f8d5.mp3"
-    ></audio>
-    <audio
-      id="sfx-bomb"
-      src="https://cdn.pixabay.com/audio/2022/03/15/audio_d0c7d3f6ec.mp3"
-    ></audio>
-    <audio
-      id="sfx-win"
-      src="https://cdn.pixabay.com/audio/2021/08/09/audio_603c1ef282.mp3"
-    ></audio>
+    <audio id="bgm" src="assets/bgm.mp3" loop></audio>
+    <audio id="sfx-food" src="assets/eat.mp3"></audio>
+    <audio id="sfx-bomb" src="assets/meow.mp3"></audio>
+    <audio id="sfx-win" src="assets/win.mp3"></audio>
 
     <script src="script.js"></script>
   </body>

@@ -5,8 +5,10 @@
 }
 
 body {
-  background: #ffe6cc;
-  font-family: sans-serif;
+  background: #ccd8ff url("assets/bg-body.png") no-repeat;
+  background-position: 50% 75%;
+  background-size: cover;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,8 +25,9 @@ body {
   position: relative;
   width: 100%;
   padding-top: 100%; /* square */
-  background: #fff0d4;
-  border: 4px solid #ff9900;
+  background: #d4f8ff;
+  border: 4px solid #0acd5b;
+  border-radius: 5%;
   overflow: hidden;
 }
 
@@ -61,7 +64,7 @@ body {
   transform: translate(-50%, -30%);
   background: rgba(255, 255, 255, 0.95);
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 5%;
   text-align: center;
   z-index: 10;
   width: 80%;
@@ -73,19 +76,32 @@ body {
 }
 
 #info-text {
-  font-size: 1.4rem;
+  font-size: 1rem;
   margin-bottom: 10px;
-  color: #ff6600;
+  color: #003d1a;
 }
 
 #info-button {
   padding: 10px 20px;
-  background: #ff9900;
+  background: #0acd5b;
   border: none;
   color: white;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 5%;
+}
+
+#score-bar {
+  font-size: 1.5rem; /* Change font size */
+  color: white; /* Change text color */
+  font-weight: bold; /* Make it bold */
+  margin-bottom: 10px; /* Space below the score bar */
+  text-align: center; /* Center the score */
+}
+
+#score {
+  color: white; /* Change the color of just the number */
+  font-weight: lighter;
 }
 
 html,
