@@ -121,7 +121,7 @@ function endGame(win) {
   if (win) {
     sfxWin.play();
     infoText.innerHTML =
-      "Yay! Kamu berhasil 🐾 Terima kasih sudah memberikan kucingnya permen 😼 Teruntuk kamu Alila, semoga game ini bikin kamu senang ya! Semoga tidak bosan, seperti biasa, terima kasih sudah belajar, sudah berusaha, lagi-lagi, <i>so proud of you.</i> Apapun hasilnya, aku bangga dengan apa yang sudah kamu pilih dan usahakan, selebihnya <i>take your time</i>. Terakhir, semoga pesan ini juga sampai ya rasa <i>excited-nya</i> aku 😎 Semoga hari kamu menyenangkan!";
+      "Hai 🙋🏻‍♂️ semoga game ini bikin kamu senang ya! Semoga tidak bosan, seperti biasa, terima kasih sudah belajar, sudah berusaha, lagi-lagi, <i>so proud of you.</i> Apapun hasilnya, aku bangga dengan apa yang sudah kamu pilih dan usahakan, selebihnya <i>take your time</i> 💪🏻 Semoga hari kamu menyenangkan!";
   } else {
     sfxBomb.play();
     infoText.innerHTML =
