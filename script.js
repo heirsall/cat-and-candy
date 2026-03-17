@@ -85,7 +85,7 @@ function spawnItem() {
         sfxFood.play();
         score++;
         updateScore();
-        if (score >= 1) {
+        if (score >= 37) {
           endGame(true);
         } else {
           fallingSpeed = Math.min(fallingSpeed + 0.3, 3);
@@ -128,7 +128,7 @@ function endGame(win) {
   if (win) {
     sfxWin.play();
     infoText.innerHTML =
-      "Haiii oliliooooo :) 🙋🏻‍♂️ semoga game ini bikin kamu senang ya! Seperti biasa, terima kasih sudah berusaha, untuk apapun yang sedang kamu hadapi, lagi-lagi, <i>so proud of you.</i> <i>Take your time</i> 💪🏻 aku mau dengerin dan baca apapun yang kamu mau ceritain, aku disini, don't wowwyyy, <i>take your timee</i> ✨ untuk apapun yang kamu butuhkan, you matter 🙂‍↕️ dengan segala keunikannya, dengan segala keanehannya, dengan segala keistimewaannya, you matter 🙆🏻‍♂️";
+      "Haiii oliliooooo :) 🙋🏻‍♂️ semoga game ini bikin kamu senang ya! Seperti biasa, terima kasih sudah berusaha, untuk apapun yang sedang kamu hadapi, lagi-lagi, <i>so proud of you.</i> <i>Take your time</i> 💪🏻 aku juga mau dengerin dan baca apapun yang kamu mau ceritain, aku disini, don't wowwyyy, issokkii 🙂‍↕️ <i>take your timee</i> ✨ untuk apapun yang kamu butuhkan 🙂‍↕️ dengan segala keunikannya, dengan segala keanehannya, dengan segala keistimewaannya, <i>you matter</i> 🙆🏻‍♂️";
     infoText.innerHTML +=
       "<br><br><i>Indeed, We have adorned the lowest heaven with the stars for decoration</i> 🌟✨ <br> Quran 37:6";
   } else {
