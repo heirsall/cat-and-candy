@@ -1,3 +1,10 @@
+// Tombol terimakasih membuka link website
+const terimakasihButton = document.getElementById("terimakasih-button");
+if (terimakasihButton) {
+  terimakasihButton.addEventListener("click", () => {
+    window.open("https://heirsall.github.io/for-terimakaashi/", "_blank"); // Ganti dengan link tujuan
+  });
+}
 const gameFrame = document.getElementById("game-frame");
 const cat = document.getElementById("cat");
 const infoBox = document.getElementById("info-box");
@@ -78,10 +85,10 @@ function spawnItem() {
         sfxFood.play();
         score++;
         updateScore();
-        if (score >= 13) {
+        if (score >= 37) {
           endGame(true);
         } else {
-          fallingSpeed = Math.min(fallingSpeed + 0.3, 8);
+          fallingSpeed = Math.min(fallingSpeed + 0.3, 3);
         }
       } else {
         endGame(false);
@@ -121,11 +128,13 @@ function endGame(win) {
   if (win) {
     sfxWin.play();
     infoText.innerHTML =
-      "Hai 🙋🏻‍♂️ semoga game ini bikin kamu senang ya! Semoga tidak bosan, seperti biasa, terima kasih sudah belajar, sudah berusaha, lagi-lagi, <i>so proud of you.</i> Apapun hasilnya, aku bangga dengan apa yang sudah kamu pilih dan usahakan, selebihnya <i>take your time</i> 💪🏻 Semoga hari kamu menyenangkan!";
+      "Haiii oliliooooo :) 🙋🏻‍♂️ semoga game ini bikin kamu senang ya! Seperti biasa, terima kasih sudah berusaha, untuk apapun yang sedang kamu hadapi, lagi-lagi, <i>so proud of you.</i> <i>Take your time</i> 💪🏻 untuk apapun yang kamu butuhkan, you matter 🙂‍↕️ dengan segala keunikannya, dengan segala keanehannya, dengan segala keistimewaannya, you matter 🙆🏻‍♂️";
+    infoText.innerHTML +=
+      "<br><br><i>Indeed, We have adorned the lowest heaven with the stars for decoration</i> 🌟✨ <br> Quran 37:6";
   } else {
     sfxBomb.play();
     infoText.innerHTML =
-      "Yah kasian kucingnya <b>minum racun</b> 🥲 Ayo! Jangan menyerah kasih makan kucingnya 😺";
+      "Yah kasian kucingnya <b>minum racun</b> 🥲 Sayang gaaa sii sama kucingnyaa! 😺";
   }
 
   infoButton.textContent = "Main Lagi!";
